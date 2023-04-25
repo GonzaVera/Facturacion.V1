@@ -36,6 +36,13 @@ public class facturacion {
 
             }
         });
+        eliminarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DefaultTableModel tbl = (DefaultTableModel)table1.getModel();
+                tbl.removeRow(table1.getSelectedRow());
+            }
+        });
     }
 
     public void setVisible(boolean b) {

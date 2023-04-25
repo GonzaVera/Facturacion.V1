@@ -21,10 +21,11 @@ public class Stock {
     private JTextField ProveedortextField5;
     private JTextField DetallestextField6;
     private JTable table1;
-    private DefaultTableModel tbl;
+    //private DefaultTableModel tbl;
 
     public Stock() {
         DefaultTableModel tbl = new DefaultTableModel();
+
         tbl.addColumn("ID");
         tbl.addColumn("Nombre");
         tbl.addColumn("Precio");
@@ -32,9 +33,9 @@ public class Stock {
         tbl.addColumn("Proveedor");
         tbl.addColumn("Detalles");
         table1.setModel(tbl); // establecer el modelo de la tabla
-        JTable table1 = new JTable(tbl);
-        JScrollPane scrollPane = new JScrollPane(table1);
-        add(scrollPane, BorderLayout.CENTER);
+    //    JTable table1 = new JTable(tbl);
+      //  JScrollPane scrollPane = new JScrollPane(table1);
+         //
 
 
         facturarButton.addActionListener(new ActionListener() {
@@ -91,18 +92,17 @@ public class Stock {
 
             }
         });
+
         eliminarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DefaultTableModel tbl = (DefaultTableModel)table1.getModel();
-                tbl.removeRow(table1.getSelectedRow());
+                DefaultTableModel n=(DefaultTableModel) table1.getModel();
+                n.removeRow(table1.getSelectedRow());
             }
         });
     }
 
-    private void add(JScrollPane scrollPane, String center) {
-        
-    }
+
 
     public void setVisible(boolean b) {
         JFrame frame = new JFrame("Lista");
