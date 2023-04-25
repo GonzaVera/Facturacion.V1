@@ -91,6 +91,13 @@ public class Stock {
 
             }
         });
+        eliminarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DefaultTableModel tbl = (DefaultTableModel)table1.getModel();
+                tbl.removeRow(table1.getSelectedRow());
+            }
+        });
     }
 
     private void add(JScrollPane scrollPane, String center) {
