@@ -33,18 +33,9 @@ public class facturacion {
             tbl.addColumn("Descuento Aplicado");
             tbl.addColumn("Total");
             table1.setModel(tbl); // establecer el modelo de la tabla
-
-
-
-
-
-
-
-
         agregarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
             }
         });
         agregarButton.addActionListener(new ActionListener() {
