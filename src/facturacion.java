@@ -21,8 +21,24 @@ public class facturacion {
     private JButton eliminarButton;
     private JButton facturarButton;
     private JLabel TotalLabel;
+    private JLabel Subto;
+    private JLabel DescAplicadotextField;
 
     public facturacion() {
+
+         DefaultTableModel tbl = new DefaultTableModel();
+             tbl.addColumn("Producto");
+            tbl.addColumn("cantidad");
+            tbl.addColumn("Precio");
+            tbl.addColumn("Descuento Aplicado");
+            tbl.addColumn("Total");
+            table1.setModel(tbl); // establecer el modelo de la tabla
+
+
+
+
+
+
 
 
         agregarButton.addActionListener(new ActionListener() {
@@ -49,9 +65,10 @@ public class facturacion {
             public void actionPerformed(ActionEvent e) {
                 CalculoFak FK = new CalculoFak();
 
-                String a,b;
-                a=ProductotextField4.getText();
+                String a,b,d;
+                a=PreciotextField3.getText();
                 b=CantidadtextField2.getText();
+                d=DescuentotextField5.getText();
                 Double.parseDouble(a);
                 Double.parseDouble(b);
                 FK.Ina(a);
@@ -59,10 +76,39 @@ public class facturacion {
                 FK.Calcular();
                 String gg;
                 gg = String.valueOf(FK.Calcular());
-                TotalLabel.setText(gg);
+                Subto.setText(gg);
 
 
 
+                Double.parseDouble(d);
+                FK.InDesc(d);
+                FK.Desc();
+                String hh;
+                hh = String.valueOf(FK.Desc());
+                DescAplicadotextField.setText(hh);
+
+                String kk;
+                FK.Total();
+                kk = String.valueOf(FK.Total());
+                TotalLabel.setText(kk);
+
+
+
+
+
+            }
+        });
+        agregarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DefaultTableModel tbl = (DefaultTableModel) table1.getModel();
+                Object[] fila = new Object[5];
+                fila[0] = ProductotextField4.getText();
+                fila[1] = CantidadtextField2.getText();
+                fila[2] = PreciotextField3. getText();
+                fila[3] = DescAplicadotextField.getText();
+                fila[4] = TotalLabel.getText();
+                tbl.addRow(fila);
             }
         });
     }

@@ -24,6 +24,7 @@ public class Stock {
     //private DefaultTableModel tbl;
 
     public Stock() {
+
         DefaultTableModel tbl = new DefaultTableModel();
 
         tbl.addColumn("ID");

@@ -32,6 +32,8 @@ public class Clientes {
         tbl.addColumn("Cantidad");
         tbl.addColumn("Proveedor");
         tbl.addColumn("Detalles");
+        table1.setModel(tbl);
+        // establecer el modelo de la tabla
         facturarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
